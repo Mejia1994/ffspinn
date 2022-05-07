@@ -16,28 +16,28 @@ const verifyToken = function (token) {
     });
 }
 
-export const middlewareWithAuthentication = function (req, res) {
+export const middlewareWithAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
 
     if (token.hasError) {
-        return redirectToLogin(req, res);
+        return redirectToLogin(req);
     }
 
     return NextResponse.next();
 }
 
-export const middlewareWithOutAuthentication = function (req, res) {
+export const middlewareWithOutAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
 
     if (!token.hasError) {
-        return redirectToHome(req, res);
+        return redirectToHome(req);
     }
 
     return NextResponse.next();
 }
 
-export default function () {
+export default function _middleware() {
     return NextResponse.next();
-};
+}
