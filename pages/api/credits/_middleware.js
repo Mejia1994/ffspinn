@@ -1,7 +1,4 @@
-/*
 import {middlewareWithAuthentication} from "../../_middleware";
-import {NextResponse} from "next/server";
-*/
 
 export default async function _middleware(req) {
 
@@ -14,7 +11,7 @@ export default async function _middleware(req) {
                     return reject({message: 'Petición no permitida'});
                 }
 
-                return resolve(true)
+                return resolve(middlewareWithAuthentication)
             })
         }
 
