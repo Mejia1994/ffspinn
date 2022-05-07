@@ -31,13 +31,13 @@ export const middlewareWithAuthentication = function (req) {
 
 export const middlewareWithOutAuthentication = function (req) {
 
-    let token = verifyToken(req.cookies?.token);
+   /* let token = verifyToken(req.cookies?.token);
 
     if (!token.hasError) {
         return redirectToHome(req);
     }
 
-    return NextResponse.next();
+    return NextResponse.next();*/
 }
 
 export default function _middleware() {
