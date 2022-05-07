@@ -18,22 +18,22 @@ const verifyToken = function (token) {
 
 export const middlewareWithAuthentication = function (req) {
 
-    let token = verifyToken(req.cookies?.token);
+    /*let token = verifyToken(req.cookies?.token);
 
     if (token.hasError) {
         return redirectToLogin(req);
     }
-
+*/
     return NextResponse.next();
 }
 
 export const middlewareWithOutAuthentication = function (req) {
 
-    let token = verifyToken(req.cookies?.token);
+    /*let token = verifyToken(req.cookies?.token);
 
     if (!token.hasError) {
         return redirectToHome(req);
-    }
+    }*/
 
     return NextResponse.next();
 }
