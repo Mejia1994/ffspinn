@@ -7,9 +7,8 @@
     "npm": "6.14.11"
   },
   "scripts": {
-     "dev": "next dev",
-
-     "start": "next start -p $PORT"
+     "start": "next dev",
+     "dev": "next start -p $PORT"
   },
   "dependencies": {
     "cookies": "^0.8.0",
