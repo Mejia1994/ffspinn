@@ -1,5 +1,4 @@
 import {NextResponse} from 'next/server'
-import jwt from "jsonwebtoken";
 
 const redirectToLogin = function (req) {
     return NextResponse.redirect(new URL('/login', req.url))
