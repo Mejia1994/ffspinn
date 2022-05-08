@@ -1,3 +1,4 @@
+/*
 import {middlewareWithAuthentication} from "../../_middleware";
 
 export default async function _middleware(req) {
@@ -19,4 +20,4 @@ export default async function _middleware(req) {
     } catch (e) {
         return new Response(e.message)
     }
-}
+}*/
