@@ -5,10 +5,9 @@ const redirectToLogin = function (req) {
     return NextResponse.redirect(new URL('/login', req.url))
 }
 
-/*
 const redirectToHome = function (req) {
     return NextResponse.redirect(new URL('/home', req.url))
-}*/
+}
 
 const verifyToken = function (token) {
 
@@ -31,13 +30,15 @@ export const middlewareWithAuthentication = function (req) {
 
 export const middlewareWithOutAuthentication = function (req) {
 
-    /*let token = verifyToken(req.cookies?.token);
+    let token = verifyToken(req.cookies?.token);
+
+    console.log(token);
 
     if (!token.hasError) {
         return redirectToHome(req);
-    }*/
+    }
 
-    // return NextResponse.next();
+     return NextResponse.next();
 }
 
 export default function _middleware() {
