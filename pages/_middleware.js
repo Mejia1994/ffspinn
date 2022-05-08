@@ -1,5 +1,6 @@
 import {NextResponse} from 'next/server'
 
+/*
 const redirectToLogin = function (req) {
     return NextResponse.redirect(new URL('/login', req.url))
 }
@@ -7,6 +8,7 @@ const redirectToLogin = function (req) {
 const redirectToHome = function (req) {
     return NextResponse.redirect(new URL('/home', req.url))
 }
+*/
 
 const verifyToken = function (token) {
 
