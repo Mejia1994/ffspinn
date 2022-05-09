@@ -1,5 +1,4 @@
-/*
 import {middlewareWithAuthentication} from "../../_middleware";
 
 
-export default middlewareWithAuthentication;*/
+export default middlewareWithAuthentication;
