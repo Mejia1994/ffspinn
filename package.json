@@ -7,8 +7,8 @@
     "npm": "6.14.11"
   },
   "scripts": {
-     "start": "next dev",
-     "dev": "next start -p $PORT"
+    "start": "next dev",
+    "dev": "next start -p $PORT"
   },
   "dependencies": {
     "cookies": "^0.8.0",
@@ -27,5 +27,7 @@
     "eslint": "8.11.0",
     "eslint-config-next": "12.1.0"
   },
-  "cacheDirectories": [".next/cache"]
+  "cacheDirectories": [
+    ".next/cache"
+  ]
 }

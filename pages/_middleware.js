@@ -21,8 +21,6 @@ export const middlewareWithAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
 
-    console.log(token);
-
     if (token.hasError) {
         return redirectToLogin(req);
     }
@@ -38,9 +36,16 @@ export const middlewareWithOutAuthentication = function (req) {
         return redirectToHome(req);
     }
 
-     return NextResponse.next();
+    return NextResponse.next();
 }
 
-export default function _middleware() {
+export default function _middleware(req) {
+
+    const {pathname} = req.nextUrl;
+
+    if (pathname === '/') {
+        return NextResponse.redirect(new URL('/home', req.url));
+    }
+
     return NextResponse.next();
 }
