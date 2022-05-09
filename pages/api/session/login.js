@@ -34,6 +34,7 @@ export default async function login(req, res) {
     try {
         let {playerId} = JSON.parse(req.body);
 
+        console.log(process.env.AUTH_URI);
         await loginPlayer(playerId);
 
         createCookies(req, res, {name: 'pid', value: playerId}, false);
