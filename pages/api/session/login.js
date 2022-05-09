@@ -6,7 +6,7 @@ import moment from "moment";
 const expiresInOneDay = 60 * 60 * 21200; // 1 days
 
 const createToken = function (payload) {
-    return jwt.sign(payload, "process.env.JWT_SECRET", {
+    return jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: expiresInOneDay //process.env.JWT_EXPIRES_IN
     }, null);
 }

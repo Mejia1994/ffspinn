@@ -11,7 +11,7 @@ const redirectToHome = function (req) {
 
 const verifyToken = function (token) {
 
-    return jwt.verify(token, "process.env.JWT_SECRET", null, (err, decoded) => {
+    return jwt.verify(token, process.env.JWT_SECRET, null, (err, decoded) => {
         if (err) return {hasError: true, payload: err};
         else return {hasError: false, payload: decoded};
     });
@@ -20,7 +20,7 @@ const verifyToken = function (token) {
 export const middlewareWithAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
-    console.log(token);
+
     if (token.hasError) {
         return redirectToLogin(req);
     }
@@ -31,8 +31,6 @@ export const middlewareWithAuthentication = function (req) {
 export const middlewareWithOutAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
-
-    console.log(token);
 
     if (!token.hasError) {
         return redirectToHome(req);
