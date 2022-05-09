@@ -21,6 +21,8 @@ export const middlewareWithAuthentication = function (req) {
 
     let token = verifyToken(req.cookies?.token);
 
+    console.log(token);
+
     if (token.hasError) {
         return redirectToLogin(req);
     }
